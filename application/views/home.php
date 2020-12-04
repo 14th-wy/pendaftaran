@@ -6,7 +6,7 @@
 	    <div class="col-sm" style="margin-top: 50px">
 	      
 			<a href="<?php echo base_url(). 'formpendaftaran'; ?>" type="button" class="btn btn-primary btn-block shadow p-3" style="height: 200px; background-color: #74b9ff; border: none;">
-				<p style="font-size: 50px">Form Pendaftaran</p>
+				<p style="font-size: 50px">Form Pendaftaran ubah</p>
 			</a>
 
 			<a href="<?php echo base_url(). 'siswa'; ?>" type="button" class="btn btn-primary btn-block shadow p-3 d-flex justify-content-center" style="height: 200px; background-color: #55efc4; border: none;">
