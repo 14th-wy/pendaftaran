@@ -10,7 +10,7 @@
 			</a>
 
 			<a href="<?php echo base_url(). 'siswa'; ?>" type="button" class="btn btn-primary btn-block shadow p-3 d-flex justify-content-center" style="height: 200px; background-color: #55efc4; border: none;">
-				<p class="" style="font-size: 50px; padding: 10%;">Siswa</p>
+				<p class="" style="font-size: 50px; padding: 10%;">Siswa ubah</p>
 			</a>
 
 	    </div>
