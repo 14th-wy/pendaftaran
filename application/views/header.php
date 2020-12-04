@@ -20,7 +20,7 @@
     <script src="<?=base_url('vendor/datatables/datatables.min.js')?>"></script>
     <script src="<?=base_url('vendor/datatables/DataTables-1.10.22/js/dataTables.bootstrap4.min.js')?>"></script>
 
-    <title>Pendaftaran!</title>
+    <title>Pendaftaran ubah!</title>
   </head>
   <body>
 
