@@ -4,7 +4,13 @@
 
 	<div class="row">
 
-	<?php if($this->session->type == "admin"){ ?>
+	<div class="col-md-4"></div>
+	<div class="col-md-4" style="margin-top: 100px;">
+		<center><img width="200" src="<?=base_url('assets/image/logo2.png')?>"/></center>
+	</div>
+	<div class="col-md-4"></div>
+
+	<!-- <?php if($this->session->type == "admin"){ ?>
 	    <div class="col-sm-4" style="margin-top: 30px; margin-bottom:0px;">
 
 		<a href="<?php echo base_url(). 'kelas'; ?>" type="button" class="btn btn-primary btn-block shadow p-3 d-flex justify-content-center" style="height: 200px; background-color: #74b9ff; border: none;">
@@ -72,7 +78,7 @@
         </a>
 
 	    </div>
-	<?php } ?>
+	<?php } ?> -->
 
 
 	</div>
