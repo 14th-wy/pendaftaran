@@ -65,8 +65,6 @@
 						<th>ALAMAT WALI SISWA</th>
 						<th>NO TELEPON RUMAH</th>
 						<th>PEKERJAAN WALI SISWA</th>
-						<th>KODE KELAS</th>
-						<th>KODE TAHUN</th>
 						<th></th>
 		            </tr>
 		        </thead>
@@ -102,8 +100,6 @@
 							<td><?=$u->alamat_walisiswa?></td>
 							<td><?=$u->no_teleponrumah?></td>
 							<td><?=$u->pekerjaan_walisiswa?></td>
-							<td><?=$u->kode_kelas?></td>
-							<td><?=$u->kode_tahun?></td>
 			                <td>
 			                	<a href="<?php echo base_url(). 'siswa/?key='.$u->nisn; ?>" class="btn btn-link">Ubah</a>
 			                	<button onclick="confirmDelete('<?=$u->nisn?>')" class="btn btn-link" data-toggle="modal" data-target="#staticBackdrop">Hapus</button>
@@ -153,8 +149,6 @@
 			$data[0]->alamat_walisiswa = "";
 			$data[0]->no_teleponrumah = "";
 			$data[0]->pekerjaan_walisiswa = "";
-			$data[0]->kode_kelas = "";
-			$data[0]->kode_tahun = "";
 		}
 	?>
 
@@ -301,18 +295,8 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="pekerjaan_walisiswa">Pekerjaa Wali Siswa</label>
+							    <label for="pekerjaan_walisiswa">Pekerjaan Wali Siswa</label>
 							    <input type="text" class="form-control" id="pekerjaan_walisiswa" name="pekerjaan_walisiswa" value="<?=$data[0]->pekerjaan_walisiswa?>">
-							</div>
-
-							<div class="form-group">
-							    <label for="kode_kelas">Kode Kelas</label>
-							    <input type="text" class="form-control" id="kode_kelas" name="kode_kelas" value="<?=$data[0]->kode_kelas?>">
-							</div>
-
-							<div class="form-group">
-							    <label for="kode_tahun">Kode Tahun</label>
-							    <input type="text" class="form-control" id="kode_tahun" name="kode_tahun" value="<?=$data[0]->kode_tahun?>">
 							</div>
 		      			</div>
 

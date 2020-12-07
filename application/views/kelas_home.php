@@ -13,7 +13,6 @@
 
 			<div class="col-2" style="margin: 0; max-width: 160px;">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Laporan</button>
 				<a type="button" href="<?php echo base_url(). 'kelas/laporan'; ?>" class="btn btn-primary">Laporan</a>
 			</div>
 				<!-- 

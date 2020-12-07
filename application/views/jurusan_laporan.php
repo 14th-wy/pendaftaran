@@ -1,6 +1,6 @@
 <?php
 $pdf = new Pdftc('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Kelas');
+$pdf->SetTitle('Jurusan');
 $pdf->SetTopMargin(20);
 $pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(true);
@@ -31,16 +31,12 @@ $html ='<table style="border-collapse:collapse;">
 </table>
 <table style="border-collapse: collapse; padding: 10px;" class="table1">
         <tr class="tr1" style="">
-            <td style="border: 1px solid #292828;">Kode Kelas</td>
-            <td style="border: 1px solid #292828;">Nama Kelas</td>
             <td style="border: 1px solid #292828;">Kode Jurusan</td>
             <td style="border: 1px solid #292828;">Nama Jurusan</td>
         </tr>';
 
 foreach($data as $u){
     $html .='<tr>
-    <td style="border: 1px solid #292828">'.$u->kode_kelas.'</td>
-    <td style="border: 1px solid #292828">'.$u->nama_kelas.'</td>
     <td style="border: 1px solid #292828">'.$u->kode_jurusan.'</td>
     <td style="border: 1px solid #292828">'.$u->nama_jurusan.'</td>
     </tr>';
@@ -53,4 +49,4 @@ $html .= '</table>';
 // output the HTML content
 $pdf->writeHTML($html, true, false, true, false, '');
 
-$pdf->Output('Kelas.pdf', 'I');
+$pdf->Output('Jurusan.pdf', 'I');

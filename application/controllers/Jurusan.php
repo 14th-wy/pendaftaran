@@ -8,8 +8,13 @@ class Jurusan extends CI_Controller{
 		$this->load->model('MJurusan');
 		$this->load->model('MFormPendaftaran');
 		$this->load->helper('url');
+		$this->load->library('pdftc');
 	}
-
+	function laporan(){
+		$data['data'] = $this->MJurusan->getAll()->result();
+		$this->load->view('jurusan_laporan', $data);
+	}
+	
 	function index(){
 
 		$data['data'] = $this->MJurusan->getAll()->result();
