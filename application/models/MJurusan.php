@@ -13,14 +13,10 @@ class MJurusan extends CI_Model{
 		return $this->db->get()->result();
 	}
 
-	function getMaxNo(){
-		return $this->db->query("select max(KODE_PROGRAM_KEAHLIAN) as no from jurusan ");
-	}
-
 	public function getFindSiswa($key){
 		$this->db->select('*');
 		$this->db->from('jurusan');
-		$this->db->where('NAMA_CALON_SISWA', $key);
+		$this->db->where('KODE_PROGRAM_KEAHLIAN', $key);
 		return $this->db->get()->result();
 	}
 
@@ -35,10 +31,6 @@ class MJurusan extends CI_Model{
 	function delete($table, $field, $id){
 		$this->db->where($field, $id);
 		$this->db->delete($table);
-	}
-
-	function getBetween($start, $end){
-		return $this->db->query("select * from jurusan where TANGGAL_PENDAFTARAN BETWEEN '".$start."' and '".$end."'");
 	}
 
 	function getDistinct(){

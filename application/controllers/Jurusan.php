@@ -17,18 +17,6 @@ class Jurusan extends CI_Controller{
 		$this->load->view('jurusan_report', $data);
 	}
 
-	function getno(){
-		$no = $this->MJurusan->getMaxNo()->result();
-		$urutan = (int) substr($no[0]->no, 2, 2);
-
-		$urutan++;
-
-		$huruf = "KJ";
-		$kode = $huruf . sprintf("%02s", $urutan);
-
-		echo json_encode($kode);
-	}
-
 	function index(){
 
 		$data['data'] = $this->MJurusan->getAll()->result();
@@ -44,8 +32,6 @@ class Jurusan extends CI_Controller{
 	function save(){
 		$data = array(
 			'KODE_PROGRAM_KEAHLIAN' => $this->input->post('kodeProgramKeahlian'),
-			'NO_PENDAFTARAN' => $this->input->post('noPendaftaran'),
-			'NAMA_CALON_SISWA' => $this->input->post('namaCalonSiswa'),
 			'PROGRAM_KEAHLIAN' => $this->input->post('programKeahlian')
 		);
 

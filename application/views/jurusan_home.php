@@ -44,8 +44,6 @@
 		            <tr>
 		                <th>No</th>
 		                <th>Kode Program Keahlian</th>
-		                <th>No. Pendaftaran</th>
-		                <th>Nama Calon Siswa</th>
 		                <th>Program Keahlian</th>
 		                <th></th>
 		            </tr>
@@ -60,8 +58,6 @@
 			            <tr>
 			                <td><?=$no++?></td>
 			                <td><?=$u->KODE_PROGRAM_KEAHLIAN?></td>
-			                <td><?=$u->NO_PENDAFTARAN?></td>
-			                <td><?=$u->NAMA_CALON_SISWA?></td>
 			                <td><?=$u->PROGRAM_KEAHLIAN?></td>
 			                <td>
 			                	<a href="<?php echo base_url(). 'jurusan/?kodeProgram='.$u->KODE_PROGRAM_KEAHLIAN; ?>" class="btn btn-link">Ubah</a>
@@ -90,8 +86,6 @@
 			// var_dump($data[0]);
 		}else{
 			$data[0]->KODE_PROGRAM_KEAHLIAN = "";
-			$data[0]->NO_PENDAFTARAN = "";
-			$data[0]->NAMA_CALON_SISWA = "";
 			$data[0]->PROGRAM_KEAHLIAN = "";
 		}
 	?>
@@ -117,40 +111,12 @@
 		      				
 			      			<div class="form-group">
 							    <label for="kodeProgramKeahlian">Kode Program Keahlian</label>
-							    <input readOnly="" type="text" class="form-control" id="kodeProgramKeahlian" name="kodeProgramKeahlian" value="<?=$data[0]->KODE_PROGRAM_KEAHLIAN?>">
+							    <input type="text" class="form-control" id="kodeProgramKeahlian" name="kodeProgramKeahlian" value="<?=$data[0]->KODE_PROGRAM_KEAHLIAN?>">
 							</div>
 
 							<div class="form-group">
-							    <label for="noPendaftaran">No. Pendaftaran</label>
-							    <select class="form-control" id="noPendaftaran" name="noPendaftaran">
-
-							      <option value="">Pilih No. Pendaftaran</option>
-							      	<?php 
-										$no = 1;
-										foreach($noPendaftaran as $n){
-
-											if($data[0]->NO_PENDAFTARAN == $n->NO_PENDAFTARAN){
-									?>
-													<option selected="" value="<?=$n->NO_PENDAFTARAN?>"><?=$n->NO_PENDAFTARAN?></option>
-									<?php
-											}else{
-												?>
-													<option value="<?=$n->NO_PENDAFTARAN?>"><?=$n->NO_PENDAFTARAN?></option>
-												<?php
-											}
-										}
-									?>
-							    </select>
-						    </div>
-
-							<div class="form-group">
-							    <label for="namaCalonSiswa">Nama Calon Siswa</label>
-							    <input type="text" class="form-control" readonly="" id="namaCalonSiswa" name="namaCalonSiswa" value="<?=$data[0]->NAMA_CALON_SISWA?>">
-							</div>
-
-							<div class="form-group">
-							    <label for="programKeahlian">Program Keahlian</label>
-							    <input readOnly="" type="text" class="form-control" id="programKeahlian" name="programKeahlian" value="<?=$data[0]->PROGRAM_KEAHLIAN?>">
+							    <label for="programKeahlian">Nama Jurusan</label>
+							    <input type="text" class="form-control" id="programKeahlian" name="programKeahlian" value="<?=$data[0]->PROGRAM_KEAHLIAN?>">
 							</div>
 
 		      			</div>
@@ -249,11 +215,6 @@
 
 	            	console.log(data);
 	            	console.log(noPendaftaran);
-
-	            	for(var i = 0; i < data.length; i++){
-						$("#namaCalonSiswa").val(data[i].NAMA_CALON_SISWA);
-						$("#programKeahlian").val(data[i].JURUSAN);
-	            	}
 
 	             }
 	        });

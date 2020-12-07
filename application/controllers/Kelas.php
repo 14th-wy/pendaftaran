@@ -18,18 +18,6 @@ class Kelas extends CI_Controller{
 		$this->load->view('kelas_report', $data);
 	}
 
-	function getno(){
-		$no = $this->MKelas->getMaxNo()->result();
-		$urutan = (int) substr($no[0]->no, 2, 2);
-
-		$urutan++;
-
-		$huruf = "KK";
-		$kode = $huruf . sprintf("%02s", $urutan);
-
-		echo json_encode($kode);
-	}
-
 	function index(){
 
 		$data['data'] = $this->MKelas->getAll()->result();

@@ -45,7 +45,7 @@
 		                <th>No</th>
 		                <th>Kode Kelas</th>
 		                <th>Nama Kelas</th>
-		                <th>Kode Program Keahlian</th>
+		                <th>Kode Jurusan</th>
 		                <th>Nama Jurusan</th>
 		                <th></th>
 		            </tr>
@@ -126,10 +126,10 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="KODE_PROGRAM_KEAHLIAN">Kode Program Keahlian</label>
+							    <label for="KODE_PROGRAM_KEAHLIAN">Kode Jurusan</label>
 							    <select class="form-control" id="KODE_PROGRAM_KEAHLIAN" name="KODE_PROGRAM_KEAHLIAN">
 
-							      <option value="">Pilih Kode Program Keahlian</option>
+							      <option value="">Pilih Kode Jurusan</option>
 							      	<?php 
 										$no = 1;
 										foreach($kodeProgramKeahlian as $n){
