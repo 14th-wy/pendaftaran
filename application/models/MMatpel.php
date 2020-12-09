@@ -1,6 +1,6 @@
 <?php 
  
-class MJurusan extends CI_Model{
+class MMatpel extends CI_Model{
 	
 	function getAll(){
 		return $this->db->get('mata_pelajaran');
@@ -38,11 +38,7 @@ class MJurusan extends CI_Model{
 	}
 
 	function getDistinct2(){
-		return $this->db->query("select kode_matpel, PROGRAM_KEAHLIAN from mata_pelajaran ");
-	}
-
-	function getNamaByNo($no){
-		return $this->db->query("select PROGRAM_KEAHLIAN from mata_pelajaran where kode_matpel = '".$no."' ");
+		return $this->db->query("select kode_matpel, nama_matpel from mata_pelajaran ");
 	}
 
 }

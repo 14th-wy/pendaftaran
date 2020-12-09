@@ -1,7 +1,7 @@
 <?php
 
 
-class Jurusan extends CI_Controller{
+class Matpel extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();		
@@ -41,12 +41,12 @@ class Jurusan extends CI_Controller{
 			$this->MMatpel->save("mata_pelajaran", $data);
 		}
 
-		redirect('mata_pelajaran');
+		redirect('matpel');
 	}
 
 	function delete(){
-		$this->MMatpel->delete("mata_pelajaran", "KODE_PROGRAM_KEAHLIAN", $this->input->get('kodeProgramKeahlian') );
-		redirect('mata_pelajaran');
+		$this->MMatpel->delete("mata_pelajaran", "kode_matpel", $this->input->get('kode_matpel') );
+		redirect('matpel');
 	}
 
 }

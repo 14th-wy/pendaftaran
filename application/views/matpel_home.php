@@ -7,7 +7,7 @@
 	?>
 
 
-	<form target="_blank" method="GET" action="<?php echo base_url(). 'jurusan/report'; ?>">
+	<form target="_blank" method="GET" action="<?php echo base_url(). 'matpel/report'; ?>">
 
 		<div class="row" style="margin-top: 10px">
 
@@ -25,7 +25,7 @@
 					<input type="date" class="form-control" id="endDate" name="endDate" value="" required="">
 				</div>  -->
 				<div class="col-1" style="padding: 0">
-					<button type="submit" class="btn btn-info">Report</a>	
+					<a type="submit" class="btn btn-info">Report</a>
 				</div>
 
 			<div class="col-sm-9"></div>
@@ -43,8 +43,9 @@
 		        <thead>
 		            <tr>
 		                <th>No</th>
-		                <th>Kode Program Keahlian</th>
-		                <th>Program Keahlian</th>
+		                <th>Kode Mata Pelajaran</th>
+		                <th>Nama Mata Pelajaran</th>
+		                <th>KB</th>
 		                <th></th>
 		            </tr>
 		        </thead>
@@ -57,11 +58,12 @@
 
 			            <tr>
 			                <td><?=$no++?></td>
-			                <td><?=$u->KODE_PROGRAM_KEAHLIAN?></td>
-			                <td><?=$u->PROGRAM_KEAHLIAN?></td>
+			                <td><?=$u->kode_matpel?></td>
+			                <td><?=$u->nama_matpel?></td>
+			                <td><?=$u->kb?></td>
 			                <td>
-			                	<a href="<?php echo base_url(). 'jurusan/?kodeProgram='.$u->KODE_PROGRAM_KEAHLIAN; ?>" class="btn btn-link">Ubah</a>
-			                	<button onclick="confirmDelete('<?=$u->KODE_PROGRAM_KEAHLIAN?>')" class="btn btn-link" data-toggle="modal" data-target="#staticBackdrop">Hapus</button>
+			                	<a href="<?php echo base_url(). 'matpel/?kode_matpel='.$u->kode_matpel; ?>" class="btn btn-link">Ubah</a>
+			                	<button onclick="confirmDelete('<?=$u->kode_matpel?>')" class="btn btn-link" data-toggle="modal" data-target="#staticBackdrop">Hapus</button>
 			                </td>
 			            </tr>
 
@@ -78,20 +80,21 @@
 	<?php
 		$titleModal = "Tambah Data";
 
-		if($this->input->get('kodeProgram') != ""){
-			$titleModal = "Edit Data ".$this->input->get('kodeProgram');	
+		if($this->input->get('kode_matpel') != ""){
+			$titleModal = "Edit Data ".$this->input->get('kode_matpel');
 
-			$data = $this->MJurusan->getSearch($this->input->get('kodeProgram'));
+			$data = $this->MMatpel->getSearch($this->input->get('kode_matpel'));
 
 			// var_dump($data[0]);
 		}else{
-			$data[0]->KODE_PROGRAM_KEAHLIAN = "";
-			$data[0]->PROGRAM_KEAHLIAN = "";
+			$data[0]->kode_matpel = "";
+			$data[0]->nama_matpel = "";
+			$data[0]->kb = "";
 		}
 	?>
 
 	<!-- Modal Add -->
-	<form action="<?php echo base_url(). 'jurusan/save'; ?>" method="post">
+	<form action="<?php echo base_url(). 'matpel/save'; ?>" method="post">
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-scrollable modal-xl">
 		    <div class="modal-content">
@@ -107,16 +110,21 @@
 		      			
 		      			<div class="col-sm">
 
-		      				<input type="hidden" name="modeEdit" value="<?=$this->input->get('kodeProgram')?>">
+		      				<input type="hidden" name="modeEdit" value="<?=$this->input->get('kode_matpel')?>">
 		      				
 			      			<div class="form-group">
-							    <label for="kodeProgramKeahlian">Kode Program Keahlian</label>
-							    <input type="text" class="form-control" id="kodeProgramKeahlian" name="kodeProgramKeahlian" value="<?=$data[0]->KODE_PROGRAM_KEAHLIAN?>">
+							    <label for="kode_matpel">Kode Mata Pelajaran</label>
+							    <input type="text" class="form-control" id="kode_matpel" name="kode_matpel" value="<?=$data[0]->kode_matpel?>">
 							</div>
 
 							<div class="form-group">
-							    <label for="programKeahlian">Nama Jurusan</label>
-							    <input type="text" class="form-control" id="programKeahlian" name="programKeahlian" value="<?=$data[0]->PROGRAM_KEAHLIAN?>">
+							    <label for="nama_matpel">Nama Mata Pelajaran</label>
+							    <input type="text" class="form-control" id="nama_matpel" name="nama_matpel" value="<?=$data[0]->nama_matpel?>">
+							</div>
+
+							<div class="form-group">
+							    <label for="kb">KB</label>
+							    <input type="text" class="form-control" id="kb" name="kb" value="<?=$data[0]->kb?>">
 							</div>
 
 		      			</div>
@@ -138,7 +146,7 @@
 
 <!-- Modal delete -->
 
-<form action="<?php echo base_url(). 'jurusan/delete'; ?>">
+<form action="<?php echo base_url(). 'matpel/delete'; ?>">
 	<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -151,7 +159,7 @@
 	      <div class="modal-body">
 
 	      		<center id="title_noPendaftaran" ></center>
-	      		<input type="hidden" name="kodeProgramKeahlian" id="delete_noPendaftaran" value="">
+	      		<input type="hidden" name="kode_matpel" id="delete_noPendaftaran" value="">
 
 	      </div>
 	      <div class="modal-footer">
@@ -175,7 +183,7 @@
 	    }else{
 			$.ajax({
 				type: "get",
-				url: "<?=base_url(). 'jurusan/getno'?>",
+				url: "<?=base_url(). ''?>",
 				data: "",
 				dataType: 'json',
 				success:function(data){
