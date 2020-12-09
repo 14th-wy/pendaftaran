@@ -59,7 +59,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="<?php echo base_url(). 'kelas'; ?>">Kelas</a>
             <a class="dropdown-item" href="<?php echo base_url(). 'jurusan'; ?>">Jurusan</a>
-            <a class="dropdown-item" href="<?php echo base_url(). 'pelajaran'; ?>">Mata Pelajaran</a>
+            <a class="dropdown-item" href="<?php echo base_url(). 'matpel'; ?>">Mata Pelajaran</a>
             <a class="dropdown-item" href="<?php echo base_url(). 'siswa'; ?>">Siswa</a>
           </div>
         </li>
