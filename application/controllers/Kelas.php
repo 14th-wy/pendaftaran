@@ -35,7 +35,7 @@ class Kelas extends CI_Controller{
 		$data['data'] = $this->MKelas->getAll()->result();
 		$data['kodeProgramKeahlian'] = $this->MJurusan->getDistinct()->result();
 
-		// var_dump($data); exit;
+		//var_dump($data); exit;
 
 		$this->load->view('header');
 		$this->load->view('kelas_home', $data);
@@ -50,7 +50,7 @@ class Kelas extends CI_Controller{
 			'KODE_PROGRAM_KEAHLIAN' => $this->input->post('KODE_PROGRAM_KEAHLIAN')
 		);
 
-		// var_dump($data); exit;
+		//var_dump($data); exit;
 
 		if($this->input->post('modeEdit') != ""){
 			$this->MKelas->replace("kelas", $data);

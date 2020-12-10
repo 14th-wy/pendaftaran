@@ -25,7 +25,7 @@
 					<input type="date" class="form-control" id="endDate" name="endDate" value="" required="">
 				</div> -->
 				<div class="col-1" style="margin: 0; padding: 0">
-					<button type="submit" class="btn btn-info">Report</a>	
+					<a type="submit" class="btn btn-info">Report</a>
 				</div>
 
 			<div class="col-sm-9"></div>

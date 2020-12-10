@@ -25,7 +25,7 @@
 					<input type="date" class="form-control" id="endDate" name="endDate" value="" required="">
 				</div> -->
 				<div class="col-1" style="padding: 0;">
-					<button type="submit" class="btn btn-info">Report</a>	
+					<a type="submit" class="btn btn-info">Report</a>
 				</div>
 
 			<div class="col-sm-9"></div>
@@ -43,11 +43,29 @@
 		        <thead>
 		            <tr>
 		                <th>No</th>
-		                <th>No. Pembayaran</th>
-		                <th>Kode Siswa</th>
+		                <th>NISN</th>
 		                <th>Nama Siswa</th>
-		                <th>Kode Kelas</th>
-		                <th>Nama Jurusan</th>
+		                <th>Tempat Lahir</th>
+		                <th>Tanggal Lahir</th>
+		                <th>Jenis Kelamin</th>
+		                <th>Agama</th>
+		                <th>Status Dalam Keluarga</th>
+		                <th>Anak Ke </th>
+		                <th>Alamat Siswa</th>
+		                <th>No Telepon Siswa</th>
+		                <th>Sekolah Asal</th>
+		                <th>Diterima Di Kelas</th>
+		                <th>Pada Tanggal</th>
+		                <th>Nama Ayah</th>
+		                <th>Nama Ibu</th>
+		                <th>Alamat Orang Tua</th>
+		                <th>No Telepon Orang Tua</th>
+		                <th>Pekerjaan Ayah</th>
+		                <th>Pekerjaan Ibu</th>
+		                <th>Nama Wali Siswa</th>
+		                <th>Alamat Wali Siswa</th>
+		                <th>No Telepon Rumah</th>
+		                <th>Pekerjaan Wali Siswa</th>
 		                <th></th>
 		            </tr>
 		        </thead>
@@ -60,14 +78,32 @@
 
 			            <tr>
 			                <td><?=$no++?></td>
-			                <td><?=$u->NO_PEMBAYARAN?></td>
-			                <td><?=$u->KODE_SISWA?></td>
-			                <td><?=$u->NAMA_SISWA?></td>
-			                <td><?=$u->KODE_KELAS?></td>
-			                <td><?=$u->NAMA_JURUSAN?></td>
+			                <td><?=$u->nisn?></td>
+			                <td><?=$u->nama_siswa?></td>
+			                <td><?=$u->tempat_lahir?></td>
+			                <td><?=$u->tanggal_lahir?></td>
+			                <td><?=$u->jenis_kelamin?></td>
+			                <td><?=$u->agama?></td>
+			                <td><?=$u->status_dalam_keluarga?></td>
+			                <td><?=$u->anak_ke?></td>
+			                <td><?=$u->alamat_siswa?></td>
+			                <td><?=$u->no_telepon_siswa?></td>
+			                <td><?=$u->sekolah_asal?></td>
+			                <td><?=$u->diterima_dikelas?></td>
+			                <td><?=$u->pada_tanggal?></td>
+			                <td><?=$u->nama_ayah?></td>
+			                <td><?=$u->nama_ibu?></td>
+			                <td><?=$u->alamat_orangtua?></td>
+			                <td><?=$u->no_telepon_orangtua?></td>
+			                <td><?=$u->pekerjaan_ayah?></td>
+			                <td><?=$u->pekerjaan_ibu?></td>
+			                <td><?=$u->nama_walisiswa?></td>
+			                <td><?=$u->alamat_walisiswa?></td>
+			                <td><?=$u->no_telepon_rumah?></td>
+			                <td><?=$u->pekerjaan_walisiswa?></td>
 			                <td>
-			                	<a href="<?php echo base_url(). 'siswa/?key='.$u->KODE_SISWA; ?>" class="btn btn-link">Ubah</a>
-			                	<button onclick="confirmDelete('<?=$u->KODE_SISWA?>')" class="btn btn-link" data-toggle="modal" data-target="#staticBackdrop">Hapus</button>
+			                	<a href="<?php echo base_url(). 'siswa/?nisn='.$u->nisn; ?>" class="btn btn-link">Ubah</a>
+			                	<button onclick="confirmDelete('<?=$u->nisn?>')" class="btn btn-link" data-toggle="modal" data-target="#staticBackdrop">Hapus</button>
 			                </td>
 			            </tr>
 
@@ -84,18 +120,35 @@
 	<?php
 		$titleModal = "Tambah Data";
 
-		if($this->input->get('key') != ""){
-			$titleModal = "Edit Data ".$this->input->get('key');	
+		if($this->input->get('nisn') != ""){
+			$titleModal = "Edit Data ".$this->input->get('nisn');
 
-			$data = $this->MSiswa->getSearch($this->input->get('key'));
+			$data = $this->MSiswa->getSearch($this->input->get('nisn'));
 
-			// var_dump($data[0]);
+//			 var_dump($data); exit;
 		}else{
-			$data[0]->NO_PEMBAYARAN = "";
-			$data[0]->KODE_SISWA = "";
-			$data[0]->NAMA_SISWA = "";
-			$data[0]->KODE_KELAS = "";
-			$data[0]->NAMA_JURUSAN = "";
+			$data[0]->nisn = "";
+			$data[0]->nama_siswa = "";
+			$data[0]->tempat_lahir = "";
+			$data[0]->tanggal_lahir = "";
+			$data[0]->jenis_kelamin = "";
+			$data[0]->agama = "";
+			$data[0]->status_dalam_keluarga = "";
+			$data[0]->anak_ke = "";
+			$data[0]->alamat_siswa = "";
+			$data[0]->no_telepon_siswa = "";
+            $data[0]->sekolah_asal = "";
+            $data[0]->diterima_dikelas = "";
+            $data[0]->pada_tanggal = "";
+            $data[0]->nama_ayah = "";
+            $data[0]->nama_ibu = "";
+            $data[0]->alamat_orangtua = "";
+            $data[0]->pekerjaan_ayah = "";
+            $data[0]->pekerjaa_ibu = "";
+			$data[0]->nama_walisiswa   = "";
+			$data[0]->alamat_walisiswa   = "";
+			$data[0]->no_telepon_walisiswa   = "";
+			$data[0]->pekerjaan_walisiswa   = "";
 		}
 	?>
 
@@ -116,68 +169,112 @@
 		      			
 		      			<div class="col-sm">
 
-		      				<input type="hidden" name="modeEdit" value="<?=$this->input->get('key')?>">
+		      				<input type="hidden" name="modeEdit" value="<?=$this->input->get('nisn')?>">
 
-		      				<div class="form-group">
-							    <label for="NO_PEMBAYARAN">No. Pembayaran</label>
-							    <select class="form-control" id="NO_PEMBAYARAN" name="NO_PEMBAYARAN">
-
-							      <option value="">Pilih No. Pembayaran</option>
-							      	<?php 
-										$no = 1;
-										foreach($noPembayaran as $n){
-
-											if($data[0]->NO_PEMBAYARAN == $n->NO_PEMBAYARAN){
-									?>
-													<option selected="" value="<?=$n->NO_PEMBAYARAN?>"><?=$n->NO_PEMBAYARAN?></option>
-									<?php
-											}else{
-												?>
-													<option value="<?=$n->NO_PEMBAYARAN?>"><?=$n->NO_PEMBAYARAN?></option>
-												<?php
-											}
-										}
-									?>
-							    </select>
-						    </div>
-		      				
 			      			<div class="form-group">
-							    <label for="KODE_SISWA">Kode Siswa</label>
-							    <input readonly="" type="text" class="form-control" id="KODE_SISWA" name="KODE_SISWA" value="<?=$data[0]->KODE_SISWA?>">
+							    <label for="nisn">NISN</label>
+							    <input type="text" class="form-control" id="nisn" name="nisn" value="<?=$data[0]->nisn?>">
 							</div>
 
 							<div class="form-group">
-							    <label for="NAMA_SISWA">Nama Siswa</label>
-							    <input readonly="" type="text" class="form-control" id="NAMA_SISWA" name="NAMA_SISWA" value="<?=$data[0]->NAMA_SISWA?>">
+							    <label for="nama_siswa">Nama Siswa</label>
+							    <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="<?=$data[0]->nama_siswa?>">
 							</div>
-
 							<div class="form-group">
-							    <label for="KODE_KELAS">Kode Kelas</label>
-							    <select class="form-control" id="KODE_KELAS" name="KODE_KELAS">
-
-							      <option value="">Pilih Kode Program Keahlian</option>
-							      	<?php 
-										$no = 1;
-										foreach($kodeKelas as $n){
-
-											if($data[0]->KODE_KELAS == $n->KODE_KELAS){
-									?>
-													<option selected="" value="<?=$n->KODE_KELAS?>"><?=$n->KODE_KELAS?></option>
-									<?php
-											}else{
-												?>
-													<option value="<?=$n->KODE_KELAS?>"><?=$n->KODE_KELAS?></option>
-												<?php
-											}
-										}
-									?>
-							    </select>
-						    </div>
-
-							<div class="form-group">
-							    <label for="NAMA_JURUSAN">Nama Jurusan</label>
-							    <input readonly="" type="text" class="form-control" id="NAMA_JURUSAN" name="NAMA_JURUSAN" value="<?=$data[0]->NAMA_JURUSAN?>">
+							    <label for="tempat_lahir">Tempat Lahir</label>
+							    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?=$data[0]->tempat_lahir?>">
 							</div>
+							<div class="form-group">
+							    <label for="tanggal_lahir">Tanggal Lahir</label>
+							    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?=$data[0]->tanggal_lahir?>">
+							</div>
+							<div class="form-group">
+							    <label for="jenis_kelamin">Jenis Kelamin</label>
+							    <select class="form-control" name="jenis_kelamin">
+                                    <option value="">Pilih Jenis Kelamin</option>
+                                    <option value="L">Laki - Laki</option>
+                                    <option value="P">Perempuan</option>
+                                </select>
+							</div>
+                            <div class="form-group">
+                                <label for="agama">Agama</label>
+                                <select class="form-control" name="agama">
+                                    <option value="">Pilih Agama</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Khonghucu">Khonghucu</option>
+                                    <option value="Buddha">Buddha</option>
+                                    <option value="Kristen">Kristen</option>
+                                    <option value="Katholik">Katholik</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+							    <label for="anak_ke">Anak Ke</label>
+							    <input type="number" class="form-control" id="anak_ke" name="anak_ke" value="<?=$data[0]->anak_ke?>">
+							</div>
+							<div class="form-group">
+							    <label for="alamat_siswa">Alamat Siswa</label>
+                                <textarea class="form-control" name="alamat_siswa" id="" cols="30" rows="5" value="<?=$data[0]->alamat_siswa?>"></textarea>
+							</div>
+							<div class="form-group">
+							    <label for="no_telepon_siswa">No Telepon Siswa</label>
+							    <input type="number" class="form-control" id="no_telepon_siswa" name="no_telepon_siswa" value="<?=$data[0]->no_telepon_siswa?>">
+							</div>
+                            <div class="form-group">
+                                <label for="status_dalam_keluarga">Status Dalam Keluarga</label>
+                                <input type="text" class="form-control" id="status_dalam_keluarga" name="status_dalam_keluarga" value="<?=$data[0]->status_dalam_keluarga?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="sekolah_asal">Sekolah Asal</label>
+                                <input type="text" class="form-control" id="sekolah_asal" name="sekolah_asal" value="<?=$data[0]->sekolah_asal?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="diterima_dikelas">Diterima Dikelas</label>
+                                <input type="text" class="form-control" id="diterima_dikelas" name="diterima_dikelas" value="<?=$data[0]->diterima_dikelas?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="pada_tanggal">Pada Tanggal</label>
+                                <input type="date" class="form-control" id="pada_tanggal" name="pada_tanggal" value="<?=$data[0]->pada_tanggal?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_ayah">Nama Ayah</label>
+                                <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" value="<?=$data[0]->nama_ayah?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_ibu">Nama Ibu</label>
+                                <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" value="<?=$data[0]->nama_ibu?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat_orangtua">Alamat Orang Tua</label>
+                                <textarea class="form-control" id="alamat_orangtua" name="alamat_orangtua" rows="5" cols="30" value="<?=$data[0]->alamat_orangtua?>"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="no_telepon_ortu">No Telepon Orang Tua</label>
+                                <input type="number" class="form-control" id="no_telepon_ortu" name="no_telepon_ortu" value="<?=$data[0]->no_telepon_orangtua?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                                <input type="text" class="form-control" id="pekerjaan_ayah" name="pekerjaan_ayah" value="<?=$data[0]->pekerjaan_ayah?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+                                <input type="text" class="form-control" id="pekerjaan_ibu" name="pekerjaan_ibu" value="<?=$data[0]->pekerjaan_ibu?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_walisiswa">Nama Wali Siswa</label>
+                                <input type="text" class="form-control" id="nama_walisiswa" name="nama_walisiswa" value="<?=$data[0]->nama_walisiswa?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat_walisiswa">Alamat Wali Siswa</label>
+                                <textarea class="form-control" id="alamat_walisiswa" name="alamat_walisiswa" rows="5" cols="30" value="<?=$data[0]->alamat_walisiswa?>"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="no_telepon_rumah">No Telepon Rumah</label>
+                                <input type="number" class="form-control" id="no_telepon_rumah" name="no_telepon_rumah" value="<?=$data[0]->no_telepon_rumah?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="pekerjaan_walisiswa">Pekerjaan Wali Siswa</label>
+                                <input type="text" class="form-control" id="pekerjaan_walisiswa" name="pekerjaan_walisiswa" value="<?=$data[0]->pekerjaan_walisiswa?>">
+                            </div>
 
 		      			</div>
 

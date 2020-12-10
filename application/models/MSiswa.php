@@ -9,14 +9,14 @@ class MSiswa extends CI_Model{
 	public function getSearch($key){
 		$this->db->select('*');
 		$this->db->from('siswa');
-		$this->db->where('KODE_SISWA', $key);
+		$this->db->where('nisn', $key);
 		return $this->db->get()->result();
 	}
 
 	public function getSearchNama($key){
 		$this->db->select('*');
 		$this->db->from('siswa');
-		$this->db->where('NAMA_SISWA', $key);
+		$this->db->where('nama_siswa', $key);
 		return $this->db->get()->result();
 	}
 
@@ -28,13 +28,10 @@ class MSiswa extends CI_Model{
 		$this->db->replace($table,$data);
 	}
 
-	function delete($table, $field, $id){
-		$this->db->where($field, $id);
-		$this->db->delete($table);
-	}
-
-	function getMaxNo(){
-		return $this->db->query("select max(KODE_SISWA) as no from siswa ");
-	}
+	function delete($table, $field, $id)
+    {
+        $this->db->where($field, $id);
+        $this->db->delete($table);
+    }
 
 }
