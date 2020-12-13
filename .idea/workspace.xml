@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d956ef38-1e22-4613-b7d3-5046ab10890a" name="Default Changelist" comment="form matpel">
-      <change beforePath="$PROJECT_DIR$/application/controllers/Kelas.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Kelas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Siswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Siswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/libraries/tcpdf" beforeDir="false" afterPath="$PROJECT_DIR$/application/libraries/tcpdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/libraries/tcpdf/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/libraries/tcpdf/tools/tcpdf_addfont.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/libraries/tcpdf/tools/tcpdf_addfont.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/MSiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MSiswa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/kelas_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/kelas_home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/siswa_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/siswa_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/breadcrumb.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/breadcrumb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pendaftaran.sql" beforeDir="false" afterPath="$PROJECT_DIR$/pendaftaran.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +87,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -107,7 +109,9 @@
       <option name="presentableId" value="Default" />
       <updated>1607472743313</updated>
       <workItem from="1607472754704" duration="7602000" />
-      <workItem from="1607391192314" duration="13047000" />
+      <workItem from="1607391192314" duration="14597000" />
+      <workItem from="1607793938908" duration="53000" />
+      <workItem from="1607794244609" duration="3456000" />
     </task>
     <task id="LOCAL-00001" summary="matpel">
       <created>1607473567593</created>

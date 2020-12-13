@@ -61,6 +61,7 @@
             <a class="dropdown-item" href="<?php echo base_url(). 'jurusan'; ?>">Jurusan</a>
             <a class="dropdown-item" href="<?php echo base_url(). 'matpel'; ?>">Mata Pelajaran</a>
             <a class="dropdown-item" href="<?php echo base_url(). 'siswa'; ?>">Siswa</a>
+            <a class="dropdown-item" href="<?php echo base_url(). 'tahunpelajaran'; ?>">Tahun Pelajaran</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -72,6 +73,7 @@
             <a class="dropdown-item" href="#">Jurusan</a>
             <a class="dropdown-item" href="#">Mata Pelajaran</a>
             <a class="dropdown-item" href="#">Siswa</a>
+            <a class="dropdown-item" href="#">Tahun Pelajaran</a>
           </div>
         </li>
       </ul>

@@ -23,6 +23,10 @@
 		    		$currentPage = "Kelas";
 		    	}
 
+		    	if($this->uri->segment(1) == "tahunpelajaran"){
+		    		$currentPage = "Tahun Pelajaran";
+		    	}
+
 		    	if($this->uri->segment(1) == "siswa"){
 					
 					$currentPage = "Siswa";
